@@ -34,14 +34,14 @@ const Homei: React.FC = () => {
         ref={containerRef}
         className="relative flex flex-col md:mt-16 items-center min-h-screen w-full px-0 sm:px-4 bg-black overflow-hidden"
       >
-        <Image 
+{/*         <Image 
           src={bgimg}  
           alt="BackgroundGIF"
           layout="fill"
           objectFit="cover"
           className="z-1"
           priority
-        />
+        /> */}
 
         {/* Heading in the left upper quadrant */}
         <div
