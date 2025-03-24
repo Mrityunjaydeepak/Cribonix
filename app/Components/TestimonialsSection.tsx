@@ -25,7 +25,7 @@ const TestimonialsSection: React.FC = () => {
       try {
         setLoading(true);
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/testimonials`
+          `https://blog.cribonix.in/api/testimonials`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch testimonials.");

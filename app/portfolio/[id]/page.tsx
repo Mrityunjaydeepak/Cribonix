@@ -16,7 +16,7 @@ interface Portfolio {
 // Fetch the list of all portfolio IDs for static generation
 async function fetchAllPortfolioIds(): Promise<string[]> {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/portfolios`, {
+    const res = await fetch(`https://blog.cribonix.in/api/portfolios`, {
       cache: "no-store", // Fetch fresh data
     });
     if (!res.ok) {
