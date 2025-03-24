@@ -9,7 +9,12 @@ import Head from "next/head";
 import Hero from "../hero/Hero";
 import logo from "./images/Mask group.png";
 import bgimg from "./images/bg.gif";
+import { NextSeo } from 'next-seo';
 import Link from "next/link";
+import { Metadata } from "next";
+
+
+ 
 
 const inter = Inter({
   weight: ["900"],
@@ -17,18 +22,14 @@ const inter = Inter({
   display: "swap",
 });
 
+
 const Homei: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
+    
     <>
-      <Head>
-        <title>Cribonix | Your Partner in Digital Marketing, Creative Design & Influencer Growth</title>
-        <meta name="description" content="Cribonix helps brands grow with expert digital marketing, creative designs and influencer marketing solutions with identifying the right audience as we believe every brand has a unique tale to tell.." />
-        <meta name="keywords" content="branding, storytelling, digital marketing, influence, legacy" />
-        <meta name="author" content="Cribonix" />
-        <link rel="canonical" href="https://cribonix.com" />
-      </Head>
+
 
       <div
         ref={containerRef}

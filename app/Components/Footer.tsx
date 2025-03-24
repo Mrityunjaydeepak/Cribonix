@@ -71,7 +71,7 @@ const Footer = () => {
               {/* Social Icons */}
               <div className="flex justify-center space-x-5">
                 <a
-                  href="https://www.facebook.com/cribonix0"
+                  href="https://www.facebook.com/cribonix"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white text-2xl hover:text-blue-500 transition"
@@ -79,7 +79,7 @@ const Footer = () => {
                   <FaFacebook />
                 </a>
                 <a
-                  href="https://www.instagram.com/yourprofile"
+                  href="https://www.instagram.com/cribonix/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white text-2xl hover:text-blue-500 transition"

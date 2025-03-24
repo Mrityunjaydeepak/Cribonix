@@ -1,20 +1,17 @@
-// app/layout.tsx
-
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import 'keen-slider/keen-slider.min.css'; // Importing external styles
-import Navbar from "./Components/Navbar"; // Correct import paths
-import Footer from "./Components/Footer"; // Correct import paths
-import { Inter } from 'next/font/google';
+import "keen-slider/keen-slider.min.css";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
+import { Inter } from "next/font/google";
 
-// Initialize the Inter font with desired configurations
 const inter = Inter({
-  subsets: ['latin'], // Specify subsets if needed
-  variable: '--font-inter', // Define a CSS variable for the font
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
-// Local font import with Tailwind CSS variable setup
+// Local font import
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -27,13 +24,28 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-// Metadata for the page (used in document <head>)
-export const metadata: Metadata = {
-  title: "Cribonix",
-  description: "Cribonix - Innovative Solutions",
-};
+// 🚀 **Dynamically Load Metadata for Each Page**
+export async function generateMetadata({ params }: { params: { slug?: string } }): Promise<Metadata> {
+  try {
+    if (!params.slug) {
+      return {
+        title: "Cribonix | Digital Marketing & Creative Design",
+        description: "Cribonix helps brands grow with expert digital marketing, creative designs, and influencer marketing solutions.",
+      };
+    }
 
-// Root layout component
+    const metaModule = await import(`./${params.slug}/meta`);
+    return metaModule.metadata;
+  } catch (error) {
+    console.error("⚠️ Metadata Error:", error);
+    return {
+      title: "Cribonix | Digital Marketing & Creative Design",
+      description: "Cribonix helps brands grow with expert digital marketing, creative designs, and influencer marketing solutions.",
+    };
+  }
+}
+
+// 🏗 **Root Layout Component**
 export default function RootLayout({
   children,
 }: {
@@ -41,19 +53,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${geistSans.variable} ${geistMono.variable}`}>
-      <head>
-        {/* Metadata and other head elements can go here */}
-      </head>
       <body className="antialiased bg-primary font-sans">
-        {/* Navbar at the top */}
         <Navbar />
-        
-        {/* Main content of the page */}
-        <main>
-          {children}
-        </main>
-
-        {/* Footer at the bottom */}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
