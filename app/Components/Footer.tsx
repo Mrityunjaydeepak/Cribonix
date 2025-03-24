@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import footerbg from "./images/footerbg.png";
+import { FaWhatsapp } from 'react-icons/fa';
 import {
   FaArrowAltCircleRight,
   FaFacebook,
@@ -163,14 +164,19 @@ const Footer = () => {
       </div>
 
       {/* Scroll to Top Button */}
-      {showButton && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-blue-500 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 hover:bg-blue-600"
-        >
-          <FaArrowUp size={20} />
-        </button>
-      )}
+     
+
+{showButton && (
+  <a
+    href="https://wa.me/yourwhatsappnumber" // Replace with your actual WhatsApp link
+    target="_blank" // Opens link in a new tab
+    rel="noopener noreferrer"
+    className="fixed bottom-8 right-8 bg-green-500 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 hover:bg-green-600"
+  >
+    <FaWhatsapp size={30} />
+  </a>
+)}
+
     </>
   );
 };

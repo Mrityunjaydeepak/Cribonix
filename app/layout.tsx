@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: { params: { slug?: string } }
   } catch (error) {
     console.error("⚠️ Metadata Error:", error);
     return {
-      title: "Cribonix | Digital Marketing & Creative Design",
+      title: "default",
       description: "Cribonix helps brands grow with expert digital marketing, creative designs, and influencer marketing solutions.",
     };
   }

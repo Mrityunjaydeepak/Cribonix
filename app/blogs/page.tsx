@@ -46,7 +46,7 @@ const Blogs: React.FC = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch("https://blog.cribonix.com/api/blogs");
+        const response = await fetch("https://blog.cribonix.in/api/blogs");
         if (!response.ok) {
           throw new Error("Failed to fetch blog posts");
         }

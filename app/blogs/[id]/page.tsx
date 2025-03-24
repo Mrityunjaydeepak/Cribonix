@@ -105,7 +105,7 @@ const BlogPage: React.FC<BlogPageProps> = ({ blogPost }) => {
 // Function to fetch all blog post IDs for static generation
 async function fetchAllBlogIds(): Promise<string[]> {
   try {
-    const res = await fetch("https://blog.cribonix.com/api/blogs");
+    const res = await fetch("https://blog.cribonix.in/api/blogs");
     if (!res.ok) {
       throw new Error("Failed to fetch blog IDs");
     }
@@ -135,7 +135,7 @@ export default async function BlogPageComponent({
 
   try {
     // Fetch the blog post data from your backend API
-    const res = await fetch(`https://blog.cribonix.com/api/blogs/${id}`);
+    const res = await fetch(`https://blog.cribonix.in/api/blogs/${id}`);
     if (!res.ok) {
       notFound(); // Automatically handle 404 if the blog post is not found
     }
